@@ -20,13 +20,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup mise
-        uses: mise-install/setup-mise@v2
-        with:
-          version: "latest"
-
-      - name: Install tools
-        run: mise install
+      - uses: jdx/mise-action@v3
 
       - name: Run CI
         run: mise run ci
