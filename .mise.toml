@@ -1,0 +1,46 @@
+[tools]
+node = "24"
+pnpm = "10.22.0"
+
+[env]
+_.file = ".env"
+
+[tasks.install]
+description = "Install dependencies with pnpm"
+run = "pnpm install"
+
+[tasks.dev]
+description = "Start development server"
+run = "exec pnpm run dev"
+
+[tasks.build]
+description = "Production build"
+run = "pnpm run build"
+
+[tasks.preview]
+description = "Preview production build locally"
+run = "pnpm run preview"
+
+[tasks.test]
+description = "Run tests once"
+run = "pnpm run test"
+
+[tasks."test:watch"]
+description = "Run tests in watch mode"
+run = "pnpm run test:watch"
+
+[tasks.lint]
+description = "Lint source code"
+run = "pnpm run lint"
+
+[tasks.format]
+description = "Format source code with Prettier"
+run = "pnpm run format"
+
+[tasks.ci]
+description = "Run full CI pipeline locally (install, lint, test, build)"
+run = "pnpm install && pnpm run lint && pnpm run test && pnpm run build"
+
+[tasks.deploy]
+description = "Build and deploy (e.g. gh-pages, Netlify, Vercel)"
+run = "pnpm run deploy"
